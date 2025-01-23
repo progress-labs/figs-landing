@@ -118,28 +118,28 @@
   }
 }
 
-/* Contenedor general de los valores */
+/* General container for values */
 .values {
   display: flex;
-  flex-wrap: wrap; /* Permite que las cards se ajusten */
+  flex-wrap: wrap; 
   justify-content: center;
   margin-top: 48px;
   margin-bottom: 48px;
 }
 
-/* Card individual */
+/* Individual card */
 .values__card {
   display: flex;
-  flex-direction: column; /* Por defecto en mobile */
+  flex-direction: column; 
   align-items: center;
   text-align: center;
-  width: 100%; /* Ancho completo en mobile */
-  max-width: 580px; /* Tamaño máximo para mantener la proporción */
+  width: 100%; 
+  max-width: 580px; 
   padding: 0 16px;
 }
-/* Icono */
+
 .values__icon {
-  margin-bottom: 0; /* Espacio entre el ícono y el texto */
+  margin-bottom: 0;
 }
 
 .values__icon-image {
@@ -148,7 +148,6 @@
   object-fit: contain;
 }
 
-/* Título y descripción */
 .values__title {
   font-size: 16px;
   font-weight: 700;
@@ -167,10 +166,10 @@
   margin: 0;
 }
 
-/* Estilos para desktop */
+/* Styles for desktop */
 @media (min-width: 768px) {
   .values {
-    flex-direction: row; /* Distribuye las cards en filas */
+    flex-direction: row; 
     max-width: 1332px;
     margin: auto;
     margin-top: 48px;
@@ -179,46 +178,45 @@
   }
 
   .values__card {
-    flex: 1 1 calc(50% - 2rem); /* Dos columnas con espacio */
+    flex: 1 1 calc(50% - 2rem); 
     max-width: 580px;
     margin: auto;
     padding: 0;
     text-align: left;
-    flex-direction: row; /* Ícono a la izquierda en desktop */
+    flex-direction: row; 
   }
 
   .values__icon {
-    margin: 0 1rem 0 0; /* Espacio entre el ícono y el contenido */
+    margin: 0 1rem 0 0; 
   }
 
   .values__content {
     flex: 1;
   }
 
-  /* Orden específico */
+  /* Specific order */
   .values__card:nth-child(1) {
-    order: 1; /* Primera fila, primera columna */
+    order: 1; /* First row, first column */
   }
   .values__card:nth-child(5) {
-    order: 2; /* Primera fila, segunda columna */
+    order: 2; /* First row, second column */
   }
   .values__card:nth-child(2) {
-    order: 3; /* Segunda fila, primera columna */
+    order: 3; /* Second row, first column */
   }
   .values__card:nth-child(6) {
-    order: 4; /* Segunda fila, segunda columna */
+    order: 4; /* Second row, second column */
   }
   .values__card:nth-child(3) {
-    order: 5; /* Tercera fila, primera columna */
+    order: 5; /* Third row, first column */
   }
   .values__card:nth-child(7) {
-    order: 6; /* Tercera fila, segunda columna */
+    order: 6; /* Third row, second column */
   }
   .values__card:nth-child(4) {
-    order: 7; /* Cuarta fila, primera columna */
+    order: 7; /* Fourth row, first column */
   }
   .values__card:nth-child(8) {
-    order: 8; /* Cuarta fila, segunda columna */
+    order: 8; 
   }
-
 }
