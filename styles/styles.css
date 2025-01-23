@@ -1,8 +1,8 @@
 .body {
-  font-family: 'Roboto',sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 .content {
@@ -10,6 +10,7 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  margin-bottom: 48px;
 }
 
 @media (min-width: 768px) {
@@ -26,7 +27,7 @@
   flex: 1;
   width: 100%;
   height: auto;
-  display: flex;  
+  display: flex;
   justify-content: center;
   overflow: hidden;
   margin: auto;
@@ -39,7 +40,7 @@
   object-position: center;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .content__image {
     max-width: 580px;
   }
@@ -56,7 +57,7 @@
   gap: 8px;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .content__text {
     max-width: 580px;
     margin: auto;
@@ -72,7 +73,6 @@
   padding-right: 16px;
 }
 
-
 .content__text-description {
   font-weight: 400;
   font-size: 13px;
@@ -83,7 +83,7 @@
   color: #282828;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .content__text-title {
     font-size: 32px;
     padding: 0;
@@ -96,24 +96,127 @@
 .content__text-signature {
   flex: 1;
   width: 100%;
-  height: auto; 
+  height: auto;
   display: flex;
-  overflow:auto;
+  overflow: auto;
 }
 
 .content__text-signature-item {
-  
   width: 100%;
   max-width: 343px;
   object-fit: cover;
   object-position: center;
+  overflow: hidden;
   padding-left: 16px;
   padding-right: 16px;
 }
 
-@media (min-width:768px) {
+@media (min-width: 768px) {
   .content__text-signature-item {
     width: 343px;
     padding: 0;
+  }
+}
+
+/* General container for values */
+.values {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+/* Individual card */
+.values__card {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  text-align: center;
+  width: 100%; 
+  max-width: 580px; 
+  padding: 0 16px;
+}
+
+.values__icon {
+  margin-bottom: 0;
+}
+
+.values__icon-image {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+}
+
+.values__title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 27px;
+  letter-spacing: 0.8px;
+  color: #282828;
+  margin: 0 0 8px;
+}
+
+.values__description {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.68px;
+  color: #282828;
+  margin: 0;
+}
+
+/* Styles for desktop */
+@media (min-width: 768px) {
+  .values {
+    flex-direction: row; 
+    max-width: 1332px;
+    margin: auto;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    gap: 16px;
+  }
+
+  .values__card {
+    flex: 1 1 calc(50% - 2rem); 
+    max-width: 580px;
+    margin: auto;
+    padding: 0;
+    text-align: left;
+    flex-direction: row; 
+  }
+
+  .values__icon {
+    margin: 0 1rem 0 0; 
+  }
+
+  .values__content {
+    flex: 1;
+  }
+
+  /* Specific order */
+  .values__card:nth-child(1) {
+    order: 1; /* First row, first column */
+  }
+  .values__card:nth-child(5) {
+    order: 2; /* First row, second column */
+  }
+  .values__card:nth-child(2) {
+    order: 3; /* Second row, first column */
+  }
+  .values__card:nth-child(6) {
+    order: 4; /* Second row, second column */
+  }
+  .values__card:nth-child(3) {
+    order: 5; /* Third row, first column */
+  }
+  .values__card:nth-child(7) {
+    order: 6; /* Third row, second column */
+  }
+  .values__card:nth-child(4) {
+    order: 7; /* Fourth row, first column */
+  }
+  .values__card:nth-child(8) {
+    order: 8; 
   }
 }
