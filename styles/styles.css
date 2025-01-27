@@ -221,10 +221,10 @@
   }
 }
 
-/* Sección Hero */
+/* Hero Section */
 .hero {
   position: relative;
-  height: 550px; /* Altura para mobile */
+  height: 550px; /* Mobile height */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -237,20 +237,20 @@
   margin-bottom: 48px;
 }
 
-/* Fondo para mobile */
+/* Mobile background */
 @media (max-width: 767px) {
   .hero {
     background-image: url("../images/Hero_Bg_Image_mobile.png");
   }
 }
 
-/* Contenedor del contenido */
+/* Content container */
 .hero__overlay {
   max-width: 580px;
   margin: 16px;
 }
 
-/* Título */
+/* Title */
 .hero__title {
   font-size: 22px;
   line-height: 28px;
@@ -259,7 +259,7 @@
   letter-spacing: 3.3px;
 }
 
-/* Descripción */
+/* Description */
 .hero__description {
   font-size: 16px;
   font-weight: 600;
@@ -268,7 +268,7 @@
   margin-bottom: 16px;
 }
 
-/* Botón */
+/* Button */
 .hero__button {
   width: 198px;
   height: 50px;
@@ -293,6 +293,7 @@
   background-color: #f0f0f0;
 }
 
+/* Desktop styles */
 @media (min-width: 768px) {
   .hero {
     height: 720px;
@@ -307,7 +308,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 100%; /* Para evitar desbordamiento horizontal */
+    max-width: 100%; /* Prevent horizontal overflow */
   }
 
   .hero__title {
