@@ -402,3 +402,278 @@
     margin-bottom: 0;
   }
 }
+
+/* Base styles for all resolutions */
+.impact-pillars-wrapper {
+  background-color: #525252;
+  width: 100%;
+  padding-bottom: 32px;
+}
+
+/* Main section container */
+.impact-pillars {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1232px;
+}
+
+/* Text content styles */
+.impact-content {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  max-width: 580px;
+  margin: 0 auto;
+  text-align: left;
+  flex: 1;
+}
+
+/* Title styles */
+.impact-content h2 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 1.2px;
+  margin-bottom: 16px;
+}
+
+/* Paragraph styles */
+.impact-content p {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.65px;
+  text-align: left;
+  text-underline-position: from-font;
+  text-decoration-skip-ink: none;
+}
+
+/* Images container */
+.pillars-container {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Images wrapper */
+.pillars-wrapper {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  padding: 0 16px;
+  overflow: hidden;
+}
+
+/* Individual image card */
+.pillar-card {
+  flex: 1;
+  min-width: 80px;
+  max-width: 120px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 0.3s ease;
+}
+
+/* Image container */
+.pillar-front {
+  position: relative;
+  transition: all 0.3s ease;
+  height: 292px;
+}
+
+/* Image styles - Change images in HTML file:
+   Purpose image: <img src="images/pillar_1.png">
+   People image: <img src="images/pillar_2.png">
+   Product image: <img src="images/pillar_3.png">
+*/
+.pillar-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: height 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  border-radius: 2.9px;
+}
+
+/* Image title styles */
+.pillar-card h3 {
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 1.8px;
+  text-align: center;
+}
+
+/* Navigation arrows */
+.nav-arrow {
+  display: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #525252;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+}
+
+.left-arrow {
+  left: -28px;
+}
+
+.right-arrow {
+  right: -28px;
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  /* Mobile text padding */
+  .impact-content h2,
+  .impact-content p {
+    padding: 0 16px;
+  }
+
+  /* Mobile images container */
+  .pillars-container {
+    position: relative;
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  /* Mobile images wrapper */
+  .pillars-wrapper {
+    height: 358px;
+    align-items: flex-end;
+  }
+
+  /* Mobile image card */
+  .pillar-card {
+    min-width: 60px;
+    height: 292px;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+  }
+
+  /* Show navigation arrows in mobile */
+  .nav-arrow {
+    display: block;
+  }
+
+  /* Active image styles */
+  .pillar-card.active {
+    height: 316px;
+    opacity: 1;
+  }
+
+  /* Mirror effect for inactive images */
+  .pillar-front {
+    transform: scaleX(-1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  /* Remove mirror effect for active image */
+  .pillar-card.active .pillar-front {
+    transform: scaleX(1);
+  }
+
+  .pillar-card.active .pillar-front img {
+    transform: scaleX(1);
+  }
+}
+
+/* Small screen styles */
+@media (max-width: 350px) {
+  /* Hide inactive images */
+  .pillar-card:not(.active) {
+    display: none;
+  }
+
+  .pillar-card {
+    opacity: 1;
+  }
+
+  .pillars-wrapper {
+    gap: 0;
+  }
+
+  /* Adjust arrow positions */
+  .left-arrow {
+    left: -1px;
+  }
+  
+  .right-arrow {
+    right: -1px;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  /* Desktop layout */
+  .impact-pillars {
+    flex-direction: row;
+    padding: 50px 16px;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* Desktop text content */
+  .impact-content {
+    padding: 0;
+    margin: auto;
+    max-width: 580px;
+  }
+
+  /* Desktop images container */
+  .pillars-container {
+    flex: 1;
+    max-width: 580px;
+  }
+
+  /* Remove padding from text */
+  .impact-content h2,
+  .impact-content p {
+    padding: 0;
+  }
+
+  /* Desktop images wrapper */
+  .pillars-wrapper {
+    justify-content: flex-start;
+    height: 542px;
+  }
+
+  /* Desktop image card */
+  .pillar-card {
+    padding-top: 42px;
+    max-width: 120px;
+  }
+
+  /* Desktop image title */
+  .pillar-card h3 {
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 2.4px;
+  }
+
+  /* Desktop image styles */
+  .pillar-front img {
+    border-radius: 8px;
+  }
+
+  .pillar-front {
+    opacity: 0.3;
+    height: 400px;
+  }
+
+  /* Hover effect */
+  .pillar-card:hover .pillar-front {
+    height: 440px;
+    opacity: 1;
+  }
+}
