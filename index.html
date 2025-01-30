@@ -4,23 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Figs-impact Landing Page</title>
-    <!-- Link to the CSS file for styling -->
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body class="body">
 
-    <!-- Hero section -->
-    <section class="hero">
-      <div class="hero__overlay">
-        <h1 class="hero__title">OUR IMPACT 2024</h1>
-        <p class="hero__description">
-          In 2024, FIGS championed healthcare professionals through bold advocacy, innovative products, campaigns and other initiatives that celebrated and supported our community. We deepened our partnerships and amplified your voices—because healthcare is human.
-        </p>
-        <a href="#report" class="hero__button">READ THE REPORT</a>
-      </div>
-    </section>
-
-    <!-- Value intro section -->
     <section class="values-intro">
       <div class="values-intro__image">
         <img src="images/Values_Image.png" alt="Our Values">
@@ -35,13 +22,11 @@
       </div>
     </section>
     
-    <!-- Value section-->
     <section class="values">
       <div class="values__card">
         <div class="values__icon">
-          <!-- Icon image -->
           <img
-            src="images/VALUES_ICONS__6 1.png"
+            src="images/Icon/VALUES_ICONS__6 1.svg"
             alt="Impact Icon"
             class="values__icon-image"
           />
@@ -58,9 +43,8 @@
 
       <div class="values__card">
         <div class="values__icon">
-          <!-- Icon image -->
           <img
-            src="images/VALUES_ICONS__2 1.png"
+            src="images/Icon/VALUES_ICONS__2 1.svg"
             alt="Arm Icon"
             class="values__icon-image"
           />
@@ -75,9 +59,8 @@
 
       <div class="values__card">
         <div class="values__icon">
-          <!-- Icon image -->
           <img
-            src="images/VALUES_ICONS__4.png"
+            src="images/Icon/VALUES_ICONS__4.svg"
             alt="Flag Icon"
             class="values__icon-image"
           />
@@ -92,9 +75,8 @@
 
       <div class="values__card">
         <div class="values__icon">
-          <!-- Icon image -->
           <img
-            src="images/VALUES_ICONS__3.png"
+            src="images/Icon/VALUES_ICONS__3.svg"
             alt="Care Icon"
             class="values__icon-image"
           />
@@ -109,9 +91,8 @@
 
       <div class="values__card">
         <div class="values__icon">
-          <!-- Icon image -->
           <img
-            src="images/VALUES_ICONS__5.png"
+            src="images/Icon/VALUES_ICONS__5.svg"
             alt="Hands Icon"
             class="values__icon-image"
           />
@@ -126,9 +107,8 @@
 
       <div class="values__card">
         <div class="values__icon">
-          <!-- Icon image -->
           <img
-            src="images/VALUES_ICONS__7.png"
+            src="images/Icon/VALUES_ICONS__7.svg"
             alt="World Icon"
             class="values__icon-image"
           />
@@ -143,9 +123,8 @@
 
       <div class="values__card">
         <div class="values__icon">
-          <!-- Icon image -->
           <img
-            src="images/VALUES_ICONS__1.png"
+            src="images/Icon/VALUES_ICONS__1.svg"
             alt="Rainbow Icon"
             class="values__icon-image"
           />
@@ -158,15 +137,12 @@
         </div>
       </div>
       
-      <!-- Extra card for spacing on desktop -->
       <div class="values__card">
       </div>
     </section>
 
-    <!-- Letter section -->
     <section class="content">
       <div class="content__image">
-        <!-- Image of Heather & Trina -->
         <img
           src="images/Heather & Trina-Prop Plane 1.png"
           alt="Heather & Trina-Prop Plane 1"
@@ -174,9 +150,7 @@
         />
       </div>
       <div class="content__text">
-        <!-- Title of the letter section -->
         <h2 class="content__text-title">Letter from Our Founders</h2>
-        <!-- First paragraph of the letter -->
         <p class="content__text-description">
           In 2024, we were reminded why FIGS exists—to celebrate and uplift our
           Awesome Humans as you take on challenges most of us can't even
@@ -185,7 +159,6 @@
           you deserve. We have doubled down on advocacy, driving meaningful
           change in the policies that impact your lives.
         </p>
-        <!-- Second paragraph of the letter -->
         <p class="content__text-description">
           This year, we amplified the voices of healthcare professionals on
           Capitol Hill, donated a record number of FIGS through Threads for
@@ -196,7 +169,6 @@
           world we all want to live in.
         </p>
         <div class="content__text-signature">
-          <!-- Signature image -->
           <img
             src="images/signature.png"
             alt="Signature"
@@ -206,39 +178,42 @@
       </div>
     </section>
 
-    <!-- Impact pillars section -->
     <div class="impact-pillars-wrapper">
       <section class="impact-pillars">
         <div class="impact-content">
-          <h2>OUR IMPACT <br> PILLARS</h2>
+          <h2>Our Impact <br> Pillars</h2>
           <p>Our Impact Report is built on three pillars: Purpose, People, and Product. This lens reflects our comprehensive approach to impact - ensuring everything we do supports healthcare professionals, amplifies their stories, and drives meaningful change. These pillars highlight our dedication to sustainable innovation, meaningful community connections, and serving those who serve others.</p>
         </div>
 
-        <div class="pillars-container">
-          <button class="nav-arrow left-arrow"><</button>
+        <div class="pillars-container" data-js="PillarsCarousel">
+          <button class="nav-arrow left-arrow">
+            <img src="images/Icon/Arrow_left.svg" alt="Previous" class="arrow-icon">
+          </button>
           <div class="pillars-wrapper">
             <div class="pillar-card active">
               <div class="pillar-front">
                 <img src="images/pillar_1.png" alt="Purpose pillar image">
               </div>
-              <h3>PURPOSE</h3>
+              <h3>Purpose</h3>
             </div>
 
             <div class="pillar-card">
               <div class="pillar-front">
                 <img src="images/pillar_2.png" alt="People pillar image">
               </div>
-              <h3>PEOPLE</h3>
+              <h3>People</h3>
             </div>
 
             <div class="pillar-card">
               <div class="pillar-front">
                 <img src="images/pillar_3.png" alt="Product pillar image">
               </div>
-              <h3>PRODUCT</h3>
+              <h3>Product</h3>
             </div>
           </div>
-          <button class="nav-arrow right-arrow">></button>
+          <button class="nav-arrow right-arrow">
+            <img src="images/Icon/Arrow_right.svg" alt="Next" class="arrow-icon">
+          </button>
         </div>
       </section>
     </div>
