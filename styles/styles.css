@@ -46,7 +46,6 @@
   }
 
   .content__image-item {
-    /*width: 100%;*/
     height: auto;
   }
 }
@@ -118,7 +117,6 @@
   }
 }
 
-/* General container for values */
 .values {
   display: flex;
   flex-wrap: wrap; 
@@ -127,7 +125,6 @@
   margin-bottom: 48px;
 }
 
-/* Individual card */
 .values__card {
   display: flex;
   flex-direction: column; 
@@ -166,7 +163,6 @@
   margin: 0;
 }
 
-/* Styles for desktop */
 @media (min-width: 768px) {
   .values {
     flex-direction: row; 
@@ -194,29 +190,110 @@
     flex: 1;
   }
 
-  /* Specific order */
   .values__card:nth-child(1) {
-    order: 1; /* First row, first column */
+    order: 1;
   }
   .values__card:nth-child(5) {
-    order: 2; /* First row, second column */
+    order: 2;
   }
   .values__card:nth-child(2) {
-    order: 3; /* Second row, first column */
+    order: 3;
   }
   .values__card:nth-child(6) {
-    order: 4; /* Second row, second column */
+    order: 4;
   }
   .values__card:nth-child(3) {
-    order: 5; /* Third row, first column */
+    order: 5;
   }
   .values__card:nth-child(7) {
-    order: 6; /* Third row, second column */
+    order: 6;
   }
   .values__card:nth-child(4) {
-    order: 7; /* Fourth row, first column */
+    order: 7;
   }
   .values__card:nth-child(8) {
     order: 8; 
+  }
+}
+
+.values-intro {
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.values-intro__image {
+  width: 100%;
+  height: 440px;
+}
+
+.values-intro__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.values-intro__content {
+  padding: 0 16px;
+  padding-bottom: 16px;
+}
+
+.values-intro__title {
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 31px;
+  letter-spacing: 1.2px;
+  color: #282828;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.values-intro__description {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0.65px;
+  color: #282828;
+  margin-bottom: 8px;
+  margin-top: 0;
+}
+
+@media (min-width: 768px) {
+  .values-intro {
+    max-width: 1288px;
+    flex-direction: row;
+    gap: 16px;
+    padding: 48px 16px;
+    align-items: center;
+    margin: 0 auto;
+    
+  }
+
+  .values-intro__content {
+    order: 1;
+    width: 100%;
+    max-width: 580px;
+    padding: 0;
+    margin: auto;
+  }
+
+  .values-intro__image {
+    order: 2;
+    max-width: 580px;
+    margin: auto;
+    margin-bottom: 0;
+  }
+
+  .values-intro__title {
+    font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 24px;
+  }
+
+  .values-intro__description {
+    margin-top: 16px;
+    margin-bottom: 0;
   }
 }
