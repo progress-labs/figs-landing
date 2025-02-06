@@ -94,6 +94,15 @@ class PurposeCarousel {
     this.rightArrow = container.querySelector('.purpose__nav-arrow--right');
     this.cardWidth = 290 + 16;
     this.setupCardEvents();
+    this.updateArrowsVisibility();
+  }
+
+  updateArrowsVisibility() {
+    const canScrollLeft = this.wrapper.scrollLeft > 0;
+    const canScrollRight = this.wrapper.scrollLeft < (this.wrapper.scrollWidth - this.wrapper.clientWidth);
+    
+    this.leftArrow.style.display = canScrollLeft ? 'flex' : 'none';
+    this.rightArrow.style.display = canScrollRight ? 'flex' : 'none';
   }
 
   moveCarousel(direction) {
@@ -108,15 +117,12 @@ class PurposeCarousel {
     this.leftArrow.addEventListener('click', () => this.moveCarousel('left'));
     this.rightArrow.addEventListener('click', () => this.moveCarousel('right'));
 
-    // Enable touch scroll
     this.wrapper.addEventListener('scroll', () => {
-      requestAnimationFrame(() => {
-        const isStart = this.wrapper.scrollLeft === 0;
-        const isEnd = this.wrapper.scrollLeft >= this.wrapper.scrollWidth - this.wrapper.clientWidth;
-        
-        this.leftArrow.style.opacity = isStart ? '0.5' : '1';
-        this.rightArrow.style.opacity = isEnd ? '0.5' : '1';
-      });
+      requestAnimationFrame(() => this.updateArrowsVisibility());
+    });
+
+    window.addEventListener('resize', () => {
+      requestAnimationFrame(() => this.updateArrowsVisibility());
     });
   }
 
@@ -137,6 +143,7 @@ class PurposeCarousel {
   resetCarousel() {
     if (this.wrapper) {
       this.wrapper.scrollLeft = 0;
+      this.updateArrowsVisibility();
     }
     
     this.cards.forEach(card => {
