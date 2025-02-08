@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'FIGSv2';
-  src: url('../fonts/FIGSv2-sans-serif-Thin.woff2') format('woff2'),
-       url('../fonts/FIGSv2-sans-serif-Thin.woff') format('woff');
+  src: url('../fonts/FIGSv2-sans-serif-Light.woff2') format('woff2'),
+       url('../fonts/FIGSv2-sans-serif-Light.woff') format('woff');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -835,21 +835,18 @@
 
 .purpose__cards {
   position: relative;
-  display: flex;
-  gap: 16px;
-  overflow: hidden;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  padding: 0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  width: 100vw;
 }
 
 .purpose__cards-wrapper {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 calc((100vw - 580px) / 2);
 }
 
 .purpose__cards-wrapper::-webkit-scrollbar {
@@ -1105,6 +1102,10 @@
     font-weight: 700;
     line-height: 70px;
     letter-spacing: 8.4px;
+  }
+
+  .purpose__cards-wrapper {
+    padding: 0 calc((100vw - 1232px) / 2);
   }
 }
 
@@ -1435,21 +1436,18 @@
 
 .people__cards {
   position: relative;
-  display: flex;
-  gap: 16px;
-  overflow: hidden;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  padding: 0;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  width: 100vw;
 }
 
 .people__cards-wrapper {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 calc((100vw - 580px) / 2);
 }
 
 .people__cards-wrapper::-webkit-scrollbar {
@@ -1706,6 +1704,10 @@
     font-weight: 700;
     line-height: 70px;
     letter-spacing: 8.4px;
+  }
+
+  .people__cards-wrapper {
+    padding: 0 calc((100vw - 1232px) / 2);
   }
 }
 
