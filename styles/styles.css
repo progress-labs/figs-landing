@@ -30,6 +30,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .content {
@@ -1831,7 +1832,7 @@
 }
 
 .product__numbers {
-  padding-bottom: 48px;
+  padding-bottom: 72px;
   display: flex;
   flex-direction: column;
   gap: 32px;
