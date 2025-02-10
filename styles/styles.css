@@ -1832,7 +1832,7 @@
 }
 
 .product__numbers {
-  padding-bottom: 48px;
+  padding-bottom: 72px;
   display: flex;
   flex-direction: column;
   gap: 32px;
