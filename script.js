@@ -45,7 +45,7 @@ class PurposeTabs {
     this.tabContents.forEach(content => {
       const carouselContainer = content.querySelector('[data-js="PurposeCarousel"]');
       if (carouselContainer) {
-        const carousel = new PurposeCarousel(carouselContainer);
+        const carousel = new Carousel(carouselContainer);
         carousel.init();
         this.carousels.set(content, carousel);
       }
@@ -63,7 +63,6 @@ class PurposeTabs {
     this.tabButtons[index].classList.add('purpose__tab-button--active');
     this.tabContents[index].classList.add('purpose__tab-content--active');
     
-    // Reiniciar el carousel de la tab activa
     const activeCarousel = this.carousels.get(this.tabContents[index]);
     if (activeCarousel) {
       activeCarousel.resetCarousel();
@@ -85,19 +84,34 @@ class PurposeTabs {
   }
 }
 
-class PurposeCarousel {
+class Carousel {
   constructor(container) {
     this.container = container;
-    this.wrapper = container.querySelector('.purpose__cards-wrapper');
-    this.cards = [...container.querySelectorAll('.purpose__card')];
-    this.leftArrow = container.querySelector('.purpose__nav-arrow--left');
-    this.rightArrow = container.querySelector('.purpose__nav-arrow--right');
+    const prefix = container.classList.contains('people__cards') ? 'people' : 'purpose';
+    
+    this.wrapper = container.querySelector(`.${prefix}__cards-wrapper`);
+    this.cards = [...container.querySelectorAll(`.${prefix}__card`)];
+    this.leftArrow = container.querySelector(`.${prefix}__nav-arrow--left`);
+    this.rightArrow = container.querySelector(`.${prefix}__nav-arrow--right`);
     this.cardWidth = 290 + 16;
-    this.setupCardEvents();
-    this.updateArrowsVisibility();
   }
 
   updateArrowsVisibility() {
+    // Calcular el ancho total que necesitan las cards
+    const totalCardsWidth = this.cards.length * this.cardWidth;
+    // Obtener el ancho disponible del wrapper
+    const availableWidth = this.wrapper.clientWidth;
+    
+    // Si el espacio disponible es mayor o igual al que necesitan las cards
+    const isAllContentVisible = availableWidth >= totalCardsWidth;
+    
+    if (isAllContentVisible) {
+      this.leftArrow.style.display = 'none';
+      this.rightArrow.style.display = 'none';
+      return;
+    }
+    
+    // Si no todo es visible, mostrar/ocultar flechas según la posición del scroll
     const canScrollLeft = this.wrapper.scrollLeft > 0;
     const canScrollRight = this.wrapper.scrollLeft < (this.wrapper.scrollWidth - this.wrapper.clientWidth);
     
@@ -130,9 +144,7 @@ class PurposeCarousel {
     this.cards.forEach(card => {
       card.addEventListener('click', () => {
         const wasActive = card.classList.contains('active');
-        
         this.cards.forEach(c => c.classList.remove('active'));
-        
         if (!wasActive) {
           card.classList.add('active');
         }
@@ -152,7 +164,9 @@ class PurposeCarousel {
   }
 
   init() {
+    this.setupCardEvents();
     this.setupNavigationEvents();
+    this.updateArrowsVisibility();
   }
 }
 
@@ -187,7 +201,7 @@ class NumberSpinner {
     this.startValue = 290000;
     this.endValue = 325000;
     this.increment = 1000;
-    this.duration = 2000; // 2 segundos para la animación
+    this.duration = 2000;
     this.hasPlayed = false;
     this.setupObserver();
   }
@@ -243,4 +257,10 @@ document.addEventListener('DOMContentLoaded', () => {
   new MapAnimation();
   
   new NumberSpinner();
+  
+  const peopleCarousel = document.querySelector('[data-js="Carousel"]');
+  if (peopleCarousel) {
+    const carousel = new Carousel(peopleCarousel);
+    carousel.init();
+  }
 });
