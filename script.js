@@ -97,6 +97,21 @@ class Carousel {
   }
 
   updateArrowsVisibility() {
+    // Calcular el ancho total que necesitan las cards
+    const totalCardsWidth = this.cards.length * this.cardWidth;
+    // Obtener el ancho disponible del wrapper
+    const availableWidth = this.wrapper.clientWidth;
+    
+    // Si el espacio disponible es mayor o igual al que necesitan las cards
+    const isAllContentVisible = availableWidth >= totalCardsWidth;
+    
+    if (isAllContentVisible) {
+      this.leftArrow.style.display = 'none';
+      this.rightArrow.style.display = 'none';
+      return;
+    }
+    
+    // Si no todo es visible, mostrar/ocultar flechas según la posición del scroll
     const canScrollLeft = this.wrapper.scrollLeft > 0;
     const canScrollRight = this.wrapper.scrollLeft < (this.wrapper.scrollWidth - this.wrapper.clientWidth);
     
