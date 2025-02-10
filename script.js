@@ -87,7 +87,6 @@ class PurposeTabs {
 class Carousel {
   constructor(container) {
     this.container = container;
-    // Determinar el prefijo basado en las clases del contenedor
     let prefix = 'purpose';
     if (container.classList.contains('people__cards')) {
       prefix = 'people';
@@ -260,7 +259,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   new NumberSpinner();
   
-  // Inicializar todos los carruseles
   const allCarousels = [...document.querySelectorAll('[data-js="Carousel"]')];
   allCarousels.forEach(container => {
     const carousel = new Carousel(container);
