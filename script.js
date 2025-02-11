@@ -242,6 +242,53 @@ class NumberSpinner {
   }
 }
 
+class StickyNav {
+  constructor() {
+    this.nav = document.querySelector('.nav-bar');
+    this.navTop = this.nav.offsetTop;
+    this.ticking = false;
+    
+    this.init();
+  }
+  
+  init() {
+    window.addEventListener('scroll', () => {
+      if (!this.ticking) {
+        window.requestAnimationFrame(() => {
+          this.updateNav();
+          this.ticking = false;
+        });
+        this.ticking = true;
+      }
+    });
+    
+    this.nav.querySelectorAll('.nav-bar__link').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  }
+  
+  updateNav() {
+    const scrollY = window.scrollY;
+    
+    if (scrollY > this.navTop) {
+      this.nav.classList.add('nav-bar--sticky');
+    } else {
+      this.nav.classList.remove('nav-bar--sticky');
+    }
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const carousels = [...document.querySelectorAll('[data-js="PillarsCarousel"]')];
   carousels.forEach(container => {
@@ -264,4 +311,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const carousel = new Carousel(container);
     carousel.init();
   });
+
+  new StickyNav();
 });
