@@ -1433,6 +1433,7 @@
   letter-spacing: 0.65px;
   font-weight: 400;
   padding-bottom: 24px;
+  margin: 0;
 }
 
 .people__cards {
@@ -2429,7 +2430,23 @@
   left: 0;
   bottom: -2px;
   width: 100%;
-  height: 2px;
+  height: 1px;
+  background-color: white;
+}
+
+.product__tab-content {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.product__tab-content--active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  display: block;
   background-color: #282828;
 }
 
