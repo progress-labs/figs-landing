@@ -1802,6 +1802,7 @@
   padding: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 24px;
 }
 
@@ -1809,10 +1810,12 @@
   color: #282828;
   text-decoration: none;
   font-size: 16px;
-  line-height: 27px;
+  line-height: 22px;
   letter-spacing: 0.8px;
   font-weight: 600;
   position: relative;
+  text-align: center;
+  display: inline-block;
 }
 
 .nav-bar__link:hover::after {
@@ -1821,7 +1824,7 @@
   left: 0;
   bottom: -2px;
   width: 100%;
-  height: 1px;
+  height: 2px;
   background-color: #282828;
 }
 
