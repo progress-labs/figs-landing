@@ -2385,7 +2385,9 @@
   visibility: visible;
   position: relative;
   display: block;
+  background-color: #282828;
 }
+
 
 .nav-bar {
   width: 100%;
