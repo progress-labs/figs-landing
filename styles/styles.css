@@ -2430,8 +2430,8 @@
   left: 0;
   bottom: -2px;
   width: 100%;
-  height: 1px;
-  background-color: white;
+  height: 2px;
+  background-color: #282828;
 }
 
 .product__tab-content {
