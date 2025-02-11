@@ -87,7 +87,12 @@ class PurposeTabs {
 class Carousel {
   constructor(container) {
     this.container = container;
-    const prefix = container.classList.contains('people__cards') ? 'people' : 'purpose';
+    let prefix = 'purpose';
+    if (container.classList.contains('people__cards')) {
+      prefix = 'people';
+    } else if (container.classList.contains('product__cards')) {
+      prefix = 'product';
+    }
     
     this.wrapper = container.querySelector(`.${prefix}__cards-wrapper`);
     this.cards = [...container.querySelectorAll(`.${prefix}__card`)];
@@ -97,12 +102,9 @@ class Carousel {
   }
 
   updateArrowsVisibility() {
-    // Calcular el ancho total que necesitan las cards
     const totalCardsWidth = this.cards.length * this.cardWidth;
-    // Obtener el ancho disponible del wrapper
     const availableWidth = this.wrapper.clientWidth;
     
-    // Si el espacio disponible es mayor o igual al que necesitan las cards
     const isAllContentVisible = availableWidth >= totalCardsWidth;
     
     if (isAllContentVisible) {
@@ -111,7 +113,6 @@ class Carousel {
       return;
     }
     
-    // Si no todo es visible, mostrar/ocultar flechas según la posición del scroll
     const canScrollLeft = this.wrapper.scrollLeft > 0;
     const canScrollRight = this.wrapper.scrollLeft < (this.wrapper.scrollWidth - this.wrapper.clientWidth);
     
@@ -258,9 +259,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   new NumberSpinner();
   
-  const peopleCarousel = document.querySelector('[data-js="Carousel"]');
-  if (peopleCarousel) {
-    const carousel = new Carousel(peopleCarousel);
+  const allCarousels = [...document.querySelectorAll('[data-js="Carousel"]')];
+  allCarousels.forEach(container => {
+    const carousel = new Carousel(container);
     carousel.init();
-  }
+  });
 });
