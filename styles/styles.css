@@ -38,15 +38,14 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-  margin-bottom: 48px;
+  padding-bottom: 48px;
 }
 
 @media (min-width: 768px) {
   .content {
     max-width: 1300px;
     flex-direction: row;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 48px 16px;
     gap: 16px;
   }
 }
@@ -149,8 +148,7 @@
   display: flex;
   flex-wrap: wrap; 
   justify-content: center;
-  margin-top: 48px;
-  margin-bottom: 48px;
+  padding-bottom: 48px;
 }
 
 .values__card {
@@ -196,9 +194,8 @@
     flex-direction: row; 
     max-width: 1332px;
     margin: auto;
-    margin-top: 48px;
-    margin-bottom: 48px;
     gap: 16px;
+    padding: 48px 16px;
   }
 
   .values__card {
