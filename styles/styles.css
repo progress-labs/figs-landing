@@ -385,7 +385,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .pillar-front {
@@ -467,7 +467,7 @@
     min-width: 80px;
     height: 292px;
     opacity: 0.3;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
   }
 
   .nav-arrow {
@@ -480,22 +480,21 @@
   }
 
   .pillar-front {
-    transform: scaleX(-1);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: all 0.3s ease;
   }
 
   .pillar-card.active .pillar-front {
-    transform: scaleX(1);
-  }
-
-  .pillar-card.active .pillar-front img {
-    transform: scaleX(1);
+    height: 316px;
   }
 }
 
 @media (max-width: 350px) {
   .pillar-card:not(.active) {
     display: none;
+  }
+
+  .pillar-card {
+    max-width: 100px;
   }
 
   .pillar-card {
