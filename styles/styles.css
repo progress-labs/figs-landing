@@ -643,6 +643,8 @@
   height: 100%;
   opacity: 0;
   transition: opacity 800ms ease-in;
+  transform: scale(0.7) translateX(-7%);
+  transform-origin: center;
 }
 
 .frame-1 { 
@@ -650,6 +652,8 @@
   position: static;
   width: 100%;
   height: auto;
+  transform: scale(1);
+  transform: none;
 }
 
 @keyframes fadeInFrames {
@@ -657,37 +661,24 @@
   100% { opacity: 1; }
 }
 
-@keyframes hideFrame {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
 .start-animation .frame-1 { 
-  animation: hideFrame 800ms ease-in 2000ms forwards;
+  animation: none;
 }
 
 .start-animation .frame-2 { 
-  animation: 
-    fadeInFrames 800ms ease-in 1000ms forwards,
-    hideFrame 800ms ease-in 4000ms forwards;
+  animation: fadeInFrames 800ms ease-in 1000ms forwards;
 }
 
 .start-animation .frame-3 { 
-  animation: 
-    fadeInFrames 800ms ease-in 3000ms forwards,
-    hideFrame 800ms ease-in 6000ms forwards;
+  animation: fadeInFrames 800ms ease-in 3000ms forwards;
 }
 
 .start-animation .frame-4 { 
-  animation: 
-    fadeInFrames 800ms ease-in 5000ms forwards,
-    hideFrame 800ms ease-in 8000ms forwards;
+  animation: fadeInFrames 800ms ease-in 5000ms forwards;
 }
 
 .start-animation .frame-5 { 
-  animation: 
-    fadeInFrames 800ms ease-in 7000ms forwards,
-    hideFrame 800ms ease-in 10000ms forwards;
+  animation: fadeInFrames 800ms ease-in 7000ms forwards;
 }
 
 .start-animation .frame-6 { 
@@ -1264,37 +1255,24 @@
   100% { opacity: 1; }
 }
 
-@keyframes hideFrame {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
 .start-animation .frame-1 { 
-  animation: hideFrame 800ms ease-in 2000ms forwards;
+  animation: none;
 }
 
 .start-animation .frame-2 { 
-  animation: 
-    fadeInFrames 800ms ease-in 1000ms forwards,
-    hideFrame 800ms ease-in 4000ms forwards;
+  animation: fadeInFrames 800ms ease-in 1000ms forwards;
 }
 
 .start-animation .frame-3 { 
-  animation: 
-    fadeInFrames 800ms ease-in 3000ms forwards,
-    hideFrame 800ms ease-in 6000ms forwards;
+  animation: fadeInFrames 800ms ease-in 3000ms forwards;
 }
 
 .start-animation .frame-4 { 
-  animation: 
-    fadeInFrames 800ms ease-in 5000ms forwards,
-    hideFrame 800ms ease-in 8000ms forwards;
+  animation: fadeInFrames 800ms ease-in 5000ms forwards;
 }
 
 .start-animation .frame-5 { 
-  animation: 
-    fadeInFrames 800ms ease-in 7000ms forwards,
-    hideFrame 800ms ease-in 10000ms forwards;
+  animation: fadeInFrames 800ms ease-in 7000ms forwards;
 }
 
 .start-animation .frame-6 { 
@@ -1867,37 +1845,24 @@
   100% { opacity: 1; }
 }
 
-@keyframes hideFrame {
-  0% { opacity: 1; }
-  100% { opacity: 0; }
-}
-
 .start-animation .frame-1 { 
-  animation: hideFrame 800ms ease-in 2000ms forwards;
+  animation: none;
 }
 
 .start-animation .frame-2 { 
-  animation: 
-    fadeInFrames 800ms ease-in 1000ms forwards,
-    hideFrame 800ms ease-in 4000ms forwards;
+  animation: fadeInFrames 800ms ease-in 1000ms forwards;
 }
 
 .start-animation .frame-3 { 
-  animation: 
-    fadeInFrames 800ms ease-in 3000ms forwards,
-    hideFrame 800ms ease-in 6000ms forwards;
+  animation: fadeInFrames 800ms ease-in 3000ms forwards;
 }
 
 .start-animation .frame-4 { 
-  animation: 
-    fadeInFrames 800ms ease-in 5000ms forwards,
-    hideFrame 800ms ease-in 8000ms forwards;
+  animation: fadeInFrames 800ms ease-in 5000ms forwards;
 }
 
 .start-animation .frame-5 { 
-  animation: 
-    fadeInFrames 800ms ease-in 7000ms forwards,
-    hideFrame 800ms ease-in 10000ms forwards;
+  animation: fadeInFrames 800ms ease-in 7000ms forwards;
 }
 
 .start-animation .frame-6 { 
