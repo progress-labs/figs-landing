@@ -296,11 +296,11 @@
 
 @media (min-width: 768px) {
   .values-intro {
-    max-width: 1288px;
+    max-width: 1232px;
     flex-direction: row;
     gap: 16px;
     padding: 48px 16px;
-  align-items: center;
+    align-items: center;
     margin: 0 auto;
     
   }
@@ -310,14 +310,14 @@
     width: 100%;
     max-width: 580px;
     padding: 0;
-    margin: auto;
   }
 
   .values-intro__image {
     order: 2;
     max-width: 580px;
-    margin: auto;
     margin-bottom: 0;
+    margin-right: 0;
+    margin-left: auto;
   }
 
   .values-intro__title {
@@ -533,8 +533,8 @@
 
   .impact-content {
     padding: 0;
-    margin: auto;
-  max-width: 580px;
+    margin: 0;
+    max-width: 580px;
   }
 
   .pillars-container {
