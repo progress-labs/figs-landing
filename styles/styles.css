@@ -34,6 +34,10 @@
   font-display: swap;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .body {
   font-family: "FIGSv2", sans-serif;
   margin: 0;
@@ -374,6 +378,7 @@
 }
 
 .pillars-container {
+  padding-top: 48px;
   position: relative;
   width: 100%;
   margin: 0 auto;
@@ -477,6 +482,10 @@
     height: 292px;
     opacity: 0.3;
     transition: all 0.3s ease;
+  }
+
+  .pillar-card:not(.active) {
+    pointer-events: none;
   }
 
   .nav-arrow {
