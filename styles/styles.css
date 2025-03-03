@@ -25,6 +25,15 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'FIGSv2';
+  src: url('../fonts/FIGSv2-sans-serif-Black.woff2') format('woff2'),
+       url('../fonts/FIGSv2-sans-serif-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 .body {
   font-family: "FIGSv2", sans-serif;
   margin: 0;
@@ -1285,16 +1294,15 @@
 }
 
 .people__numbers-label {
-  font-weight: 700;
+  font-weight: 400;
   font-size: 13px;
-  line-height: 20px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  line-height: 22px;
+  letter-spacing: 0.65px;
 }
 
 .people__numbers-value {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 48px;
   letter-spacing: 5.4px;
 }
@@ -1331,6 +1339,14 @@
     width: 100%;
     object-fit: contain;
   }
+
+  .people__numbers-stats {
+    max-width: 343px;
+  }
+}
+
+.people__tabs {
+  width: 100%;
 }
 
 .people__tab-header {
@@ -1342,7 +1358,6 @@
 .people__tab-button {
   background: none;
   border: none;
-  color: white;
   font-size: 13px;
   line-height: 22px;
   letter-spacing: 0.65px;
@@ -1353,7 +1368,7 @@
 
 .people__tab-button--active {
   opacity: 1;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid;
 }
 
 .people__tab-title {
@@ -1362,7 +1377,7 @@
   line-height: 31px;
   letter-spacing: 1.2px;
   padding-bottom: 16px;
-  margin-top: 0;
+  margin: 0;
 }
 
 .people__tab-description {
@@ -1372,6 +1387,22 @@
   font-weight: 400;
   padding-bottom: 24px;
   margin: 0;
+  max-width: 540px;
+}
+
+.people__tab-content {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  position: absolute;
+  width: 100%;
+}
+
+.people__tab-content--active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  display: block;
 }
 
 .people__cards {
@@ -1641,7 +1672,7 @@
 
   .people__numbers-value{
     font-size: 56px;
-    font-weight: 700;
+    font-weight: 900;
     line-height: 70px;
     letter-spacing: 8.4px;
   }
@@ -1839,16 +1870,15 @@
 }
 
 .product__numbers-label {
-  font-weight: 700;
+  font-weight: 400;
   font-size: 13px;
-  line-height: 20px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  line-height: 22px;
+  letter-spacing: 0.65px;
 }
 
 .product__numbers-value {
   font-size: 36px;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 48px;
   letter-spacing: 5.4px;
 }
@@ -1884,6 +1914,10 @@
   .product__numbers-map {
     width: 100%;
     object-fit: contain;
+  }
+
+  .product__numbers-stats {
+    max-width: 343px;
   }
 }
 
@@ -2195,7 +2229,7 @@
 
   .product__numbers-value{
     font-size: 56px;
-    font-weight: 700;
+    font-weight: 900;
     line-height: 70px;
     letter-spacing: 8.4px;
   }
@@ -2335,7 +2369,6 @@
   visibility: visible;
   position: relative;
   display: block;
-  background-color: #282828;
 }
 
 .nav-bar--sticky {
