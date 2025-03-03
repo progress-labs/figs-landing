@@ -806,7 +806,6 @@ html {
   }
 
   .people__numbers-map {
-    max-height: 400px;
     width: 100%;
     object-fit: contain;
   }
@@ -1344,7 +1343,6 @@ html {
   .people__numbers-map-container {
     flex: 1;
     max-width: 580px;
-    margin-top: auto;
     margin-bottom: auto;
     min-height: 100%;
     display: flex;
