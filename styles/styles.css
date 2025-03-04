@@ -827,9 +827,11 @@ html {
   background: none;
   border: none;
   color: white;
+  font-family: "FIGSv2", sans-serif;
+  font-weight: 700;
   font-size: 13px;
   line-height: 22px;
-  letter-spacing: 0.65px;
+  letter-spacing: 2px;
   cursor: pointer;
   text-transform: uppercase;
   padding: 0;
@@ -837,7 +839,17 @@ html {
 
 .purpose__tab-button--active {
   opacity: 1;
-  border-bottom: 2px solid white;
+  position: relative;
+}
+
+.purpose__tab-button--active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: white;
 }
 
 .purpose__tab-title {
@@ -1187,7 +1199,7 @@ html {
   position: absolute;
   left: 0;
   bottom: -2px;
-  width: 100%;
+    width: 100%;
   height: 1px;
   background-color: white;
 }
@@ -1387,9 +1399,11 @@ html {
 .people__tab-button {
   background: none;
   border: none;
+  font-family: "FIGSv2", sans-serif;
+  font-weight: 700;
   font-size: 13px;
   line-height: 22px;
-  letter-spacing: 0.65px;
+  letter-spacing: 2px;
   cursor: pointer;
   text-transform: uppercase;
   padding: 0;
@@ -1397,7 +1411,17 @@ html {
 
 .people__tab-button--active {
   opacity: 1;
-  border-bottom: 2px solid;
+  position: relative;
+}
+
+.people__tab-button--active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #282828;
 }
 
 .people__tab-title {
@@ -1960,6 +1984,8 @@ html {
   background: none;
   border: none;
   color: white;
+  font-family: "FIGSv2", sans-serif;
+  font-weight: 700;
   font-size: 13px;
   line-height: 22px;
   letter-spacing: 0.65px;
@@ -1970,7 +1996,17 @@ html {
 
 .product__tab-button--active {
   opacity: 1;
-  border-bottom: 2px solid white;
+  position: relative;
+}
+
+.product__tab-button--active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: white;
 }
 
 .product__tab-title {
