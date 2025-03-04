@@ -199,10 +199,10 @@ class MapAnimation {
 class NumberSpinner {
   constructor() {
     this.numberElement = document.querySelector('.purpose__numbers-stat:first-child .purpose__numbers-value');
-    this.startValue = 290000;
+    this.startValue = 100000;
     this.endValue = 325000;
     this.increment = 1000;
-    this.duration = 2000;
+    this.duration = 8000;
     this.hasPlayed = false;
     this.setupObserver();
   }
