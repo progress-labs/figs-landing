@@ -313,7 +313,7 @@ html {
     flex-direction: row;
     gap: 16px;
     padding: 48px 16px;
-    align-items: center;
+  align-items: center;
     margin: 0 auto;
     
   }
@@ -556,7 +556,7 @@ html {
   .impact-content {
     padding: 0;
     margin: 0;
-    max-width: 580px;
+  max-width: 580px;
   }
 
   .pillars-container {
@@ -1135,6 +1135,18 @@ html {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1264px) {
+  .purpose__cards-wrapper {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 612px) {
+  .purpose__cards-wrapper {
+    padding: 0 16px;
+  }
+}
+
 .purpose__card.active {
   background: rgba(255, 255, 255, 0.15);
 }
@@ -1172,14 +1184,16 @@ html {
   visibility: hidden;
   color: white;
   text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 0.65px;
+  font-size: 12px;
+  letter-spacing: 1.8px;
+  line-height: 18px;
   text-transform: uppercase;
   transform: translateY(40px);
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
   position: relative;
   display: inline-block;
+  font-weight: 700;
 }
 
 .purpose__card-link::after {
@@ -1239,18 +1253,18 @@ html {
 .people__title {
   font-size: 32px;
   font-weight: 700;
-  line-height: 55px;
-  letter-spacing: 6.6px;
+    line-height: 55px;
+    letter-spacing: 6.6px;
   text-transform: uppercase;
-  margin: 0;
-}
+    margin: 0;
+  }
 
 .people__description {
   font-size: 13px;
   line-height: 22px;
   letter-spacing: 0.65px;
   padding-bottom: 48px;
-  max-width: 580px;
+    max-width: 580px;
   margin: 0;
 }
 
@@ -1359,7 +1373,7 @@ html {
   }
 
   .people__numbers-map {
-    width: 100%;
+  width: 100%;
     object-fit: contain;
   }
 
@@ -1711,6 +1725,18 @@ html {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1264px) {
+  .people__cards-wrapper {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 612px) {
+  .people__cards-wrapper {
+    padding: 0 16px;
+  }
+}
+
 .people__card.active {
   background: rgba(255, 255, 255, 0.15);
 }
@@ -1748,14 +1774,16 @@ html {
   visibility: hidden;
   color: white;
   text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 0.65px;
+  font-size: 12px;
+  letter-spacing: 1.8px;
+  line-height: 18px;
   text-transform: uppercase;
   transform: translateY(40px);
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
   position: relative;
   display: inline-block;
+  font-weight: 700;
 }
 
 .people__card-link::after {
@@ -1965,7 +1993,7 @@ html {
   letter-spacing: 0.65px;
   cursor: pointer;
   text-transform: uppercase;
-  padding: 0;
+    padding: 0;
 }
 
 .product__tab-button--active {
@@ -2079,7 +2107,7 @@ html {
   flex-direction: row-reverse;
   justify-content: flex-end;
     align-items: center;
-  margin-bottom: 24px;
+    margin-bottom: 24px;
   gap: 16px;
 }
 
@@ -2268,6 +2296,18 @@ html {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1264px) {
+  .product__cards-wrapper {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 612px) {
+  .product__cards-wrapper {
+    padding: 0 16px;
+  }
+}
+
 .product__card.active {
   background: rgba(255, 255, 255, 0.15);
 }
@@ -2305,14 +2345,16 @@ html {
   visibility: hidden;
   color: white;
   text-decoration: none;
-  font-size: 13px;
-  letter-spacing: 0.65px;
+  font-size: 12px;
+  letter-spacing: 1.8px;
+  line-height: 18px;
   text-transform: uppercase;
   transform: translateY(40px);
   opacity: 0;
   transition: transform 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
   position: relative;
   display: inline-block;
+  font-weight: 700;
 }
 
 .product__card-link::after {
