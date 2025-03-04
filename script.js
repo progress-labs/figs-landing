@@ -289,6 +289,41 @@ class StickyNav {
   }
 }
 
+class PeopleTabs {
+  constructor(container) {
+    this.container = container;
+    this.tabButtons = [...container.querySelectorAll('.people__tab-button')];
+    this.tabContents = [...container.querySelectorAll('.people__tab-content')];
+    this.currentTab = 0;
+  }
+
+  showTab(index) {
+    this.tabButtons.forEach(button => {
+      button.classList.remove('people__tab-button--active');
+    });
+    this.tabContents.forEach(content => {
+      content.classList.remove('people__tab-content--active');
+    });
+
+    this.tabButtons[index].classList.add('people__tab-button--active');
+    this.tabContents[index].classList.add('people__tab-content--active');
+  }
+
+  setupTabEvents() {
+    this.tabButtons.forEach((button, index) => {
+      button.addEventListener('click', () => {
+        this.currentTab = index;
+        this.showTab(this.currentTab);
+      });
+    });
+  }
+
+  init() {
+    this.showTab(this.currentTab);
+    this.setupTabEvents();
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const carousels = [...document.querySelectorAll('[data-js="PillarsCarousel"]')];
   carousels.forEach(container => {
@@ -313,4 +348,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   new StickyNav();
+
+  const peopleTabs = [...document.querySelectorAll('[data-js="PeopleTabs"]')];
+  peopleTabs.forEach(container => {
+    const tabs = new PeopleTabs(container);
+    tabs.init();
+  });
 });
