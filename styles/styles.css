@@ -53,6 +53,7 @@ html {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  background-color: #F5F5F5;
 }
 
 .content {
@@ -119,6 +120,7 @@ html {
   letter-spacing: 1.2px;
   padding-left: 16px;
   padding-right: 16px;
+  color: #425984;
 }
 
 .content__text-description {
@@ -198,7 +200,7 @@ html {
   font-weight: 700;
   line-height: 27px;
   letter-spacing: 0.8px;
-  color: #282828;
+  color: #425984;
   margin: 0 0 8px;
 }
 
@@ -292,7 +294,7 @@ html {
   font-size: 25px;
   line-height: 31px;
   letter-spacing: 1.2px;
-  color: #282828;
+  color: #425984;
   margin-top: 24px;
   margin-bottom: 16px;
 }
