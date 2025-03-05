@@ -113,7 +113,7 @@ html {
 }
 
 .content__text-title {
-  font-weight: 700;
+  font-weight: 900;
   font-size: 25px;
   line-height: 31px;
   letter-spacing: 1.2px;
@@ -288,7 +288,7 @@ html {
 }
 
 .values-intro__title {
-  font-weight: 700;
+  font-weight: 900;
   font-size: 25px;
   line-height: 31px;
   letter-spacing: 1.2px;
@@ -368,8 +368,8 @@ html {
 }
 
 .impact-content h2 {
+  font-weight: 900;
   font-size: 32px;
-  font-weight: 700;
   line-height: 36px;
   letter-spacing: 6.6px;
   margin-bottom: 16px;
@@ -635,8 +635,8 @@ html {
 }
 
 .purpose__title {
+  font-weight: 900;
   font-size: 32px;
-  font-weight: 700;
   line-height: 55px;
   letter-spacing: 6.6px;
   text-transform: uppercase;
@@ -718,7 +718,7 @@ html {
 
 .purpose__numbers-title {
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 31px;
   letter-spacing: 1.2px;
   padding-bottom: 16px;
@@ -854,7 +854,7 @@ html {
 
 .purpose__tab-title {
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 31px;
   letter-spacing: 1.2px;
   padding-bottom: 16px;
@@ -1249,8 +1249,8 @@ html {
 }
 
 .people__title {
+  font-weight: 900;
   font-size: 32px;
-  font-weight: 700;
   line-height: 55px;
   letter-spacing: 6.6px;
   text-transform: uppercase;
@@ -1290,7 +1290,7 @@ html {
 
 .people__numbers-title {
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 31px;
   letter-spacing: 1.2px;
   padding-bottom: 16px;
@@ -1426,7 +1426,7 @@ html {
 
 .people__tab-title {
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 31px;
   letter-spacing: 1.2px;
   padding-bottom: 16px;
@@ -1837,8 +1837,8 @@ html {
 }
 
 .product__title {
+  font-weight: 900;
   font-size: 32px;
-  font-weight: 700;
   line-height: 55px;
   letter-spacing: 6.6px;
   text-transform: uppercase;
@@ -1883,7 +1883,7 @@ html {
 
 .product__numbers-title {
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 31px;
   letter-spacing: 1.2px;
   padding-bottom: 16px;
@@ -2011,7 +2011,7 @@ html {
 
 .product__tab-title {
   font-size: 25px;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 31px;
   letter-spacing: 1.2px;
   padding-bottom: 16px;
