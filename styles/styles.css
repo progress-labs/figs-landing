@@ -346,16 +346,34 @@ html {
 }
 
 .impact-pillars-wrapper {
-  background-color: #525252;
+  background-color: #020202;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.impact-pillars-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/Impact\ pillars\ bg.jpeg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  z-index: 1;
 }
 
 .impact-pillars {
-  color: white;
+  color: #FFFFFF;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   max-width: 1232px;
+  position: relative;
+  z-index: 2;
 }
 
 .impact-content {
@@ -446,7 +464,7 @@ html {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #525252;
+  background: none;
   border: none;
   color: white;
   font-size: 24px;
