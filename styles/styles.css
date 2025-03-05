@@ -697,23 +697,23 @@ html {
 }
 
 .start-animation .frame-2 { 
-  animation: fadeInFrames 800ms ease-in 1000ms forwards;
+  animation: fadeInFrames 600ms ease-in 800ms forwards;
 }
 
 .start-animation .frame-3 { 
-  animation: fadeInFrames 800ms ease-in 3000ms forwards;
+  animation: fadeInFrames 600ms ease-in 2400ms forwards;
 }
 
 .start-animation .frame-4 { 
-  animation: fadeInFrames 800ms ease-in 5000ms forwards;
+  animation: fadeInFrames 600ms ease-in 4000ms forwards;
 }
 
 .start-animation .frame-5 { 
-  animation: fadeInFrames 800ms ease-in 7000ms forwards;
+  animation: fadeInFrames 600ms ease-in 5600ms forwards;
 }
 
 .start-animation .frame-6 { 
-  animation: fadeInFrames 800ms ease-in 9000ms forwards;
+  animation: fadeInFrames 600ms ease-in 7200ms forwards;
 }
 
 .purpose__numbers-title {
