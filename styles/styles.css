@@ -888,7 +888,7 @@ html {
 
 .purpose__cards-wrapper {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   overflow-x: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
@@ -1494,7 +1494,7 @@ html {
 
 .people__cards-wrapper {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   overflow-x: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
@@ -1849,12 +1849,11 @@ html {
 }
 
 .product-wrapper {
-  background-color: #27302C;
+  background-color: white;
   width: 100%;
 }
 
 .product {
-  color: white;
   padding: 48px 16px;
   max-width: 580px;
   margin: 0 auto;
@@ -1884,6 +1883,7 @@ html {
   letter-spacing: 6.6px;
   text-transform: uppercase;
   margin: 0;
+  color: #7D1B49;
 }
 
 .product__description {
@@ -1895,48 +1895,31 @@ html {
   margin: 0;
 }
 
-.product__numbers {
-  padding-bottom: 72px;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+.product__banner {
+  padding-bottom: 48px;
+  text-align: lefts;
 }
 
-.product__numbers-map-container {
-  width: 100%;
-  height: auto;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.product__numbers-map {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  position: static;
-  width: 100%;
-  height: auto;
-}
-
-.product__numbers-title {
-  font-size: 25px;
+.product__banner-title {
+  font-size: 44px;
   font-weight: 900;
-  line-height: 31px;
-  letter-spacing: 1.2px;
-  padding-bottom: 16px;
+  line-height: 45px;
+  letter-spacing: 6.6px;
+  color: #7D1B49;
   margin: 0;
+  text-transform: uppercase;
+  padding-bottom: 24px;
 }
 
-.product__numbers-description {
-  font-weight: 400;
-  font-size: 13px;
-  line-height: 22px;
-  letter-spacing: 0.65px;
-  padding-bottom: 32px;
+.product__banner-subtitle {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 21px;
+  letter-spacing: 2.1px;
+  color: #7D1B49;
+  padding-bottom: 48px;
+  text-transform: uppercase;
+  max-width: 310px;
   margin: 0;
 }
 
@@ -2013,6 +1996,23 @@ html {
   .product__numbers-stats {
     max-width: 343px;
   }
+  
+  .product__banner-title {
+    font-size: 70px;
+    font-weight: 900;
+    line-height: 69px;
+    letter-spacing: 1.2px;
+    max-width: 1000px;
+  }
+
+  .product__banner-subtitle {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: 2.7px;
+    padding-bottom: 48px;
+    max-width: 580px;
+  }
 }
 
 .product__tab-header {
@@ -2057,6 +2057,7 @@ html {
   letter-spacing: 1.2px;
   padding-bottom: 16px;
   margin: 0;
+  color: #7D1B49;
 }
 
 .product__tab-description {
@@ -2077,7 +2078,7 @@ html {
 
 .product__cards-wrapper {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   overflow-x: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
