@@ -2151,8 +2151,8 @@ html {
   display: flex;
   flex-direction: row-reverse;
   justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 24px;
+  align-items: center;
+  margin-bottom: 24px;
   gap: 16px;
 }
 
@@ -2426,7 +2426,6 @@ html {
   position: relative;
   display: block;
 }
-
 .nav-bar {
   width: 100%;
   background-color: white;
