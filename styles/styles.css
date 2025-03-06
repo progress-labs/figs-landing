@@ -880,7 +880,7 @@ html {
 
 .purpose__cards-wrapper {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   overflow-x: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
@@ -1481,7 +1481,7 @@ html {
 
 .people__cards-wrapper {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   overflow-x: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
@@ -2065,7 +2065,7 @@ html {
 
 .product__cards-wrapper {
   display: flex;
-  gap: 16px;
+  gap: 24px;
   overflow-x: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
