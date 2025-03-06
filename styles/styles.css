@@ -1242,7 +1242,7 @@ html {
 }
 
 .people-wrapper {
-  background-color: #F7F2DC;
+  background-color: #F5F5F5;
   width: 100%;
 }
 
@@ -1276,7 +1276,8 @@ html {
   line-height: 55px;
   letter-spacing: 6.6px;
   text-transform: uppercase;
-    margin: 0;
+  margin: 0;
+  color: #344C44;
   }
 
 .people__description {
@@ -1318,6 +1319,7 @@ html {
   letter-spacing: 1.2px;
   padding-bottom: 16px;
   margin: 0;
+  color: #344C44;
 }
 
 .people__numbers-description {
@@ -1364,6 +1366,7 @@ html {
   font-weight: 900;
   line-height: 48px;
   letter-spacing: 5.4px;
+  color: #344C44;
 }
 
 @media (min-width: 768px) {
@@ -1454,6 +1457,7 @@ html {
   letter-spacing: 1.2px;
   padding-bottom: 16px;
   margin: 0;
+  color: #344C44;
 }
 
 .people__tab-description {
