@@ -80,6 +80,7 @@ html {
   justify-content: center;
   overflow: hidden;
   margin: auto;
+  border-radius: 8px;
 }
 
 .content__image-item {
