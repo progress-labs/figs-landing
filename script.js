@@ -99,6 +99,7 @@ class Carousel {
     this.leftArrow = container.querySelector(`.${prefix}__nav-arrow--left`);
     this.rightArrow = container.querySelector(`.${prefix}__nav-arrow--right`);
     this.cardWidth = 290 + 16;
+    this.prefix = prefix;
   }
 
   updateArrowsVisibility() {
@@ -141,6 +142,16 @@ class Carousel {
     });
   }
 
+  updateCardTransform(card) {
+    const header = card.querySelector(`.${this.prefix}__card-header`);
+    const content = card.querySelector(`.${this.prefix}__card-content`);
+    if (header && content) {
+      const headerHeight = header.offsetHeight;
+      const translateY = headerHeight > 35 ? 70 : 56;
+      content.style.transform = `translateY(calc(100% - ${translateY}px))`;
+    }
+  }
+
   setupCardEvents() {
     this.cards.forEach(card => {
       card.addEventListener('click', () => {
@@ -148,6 +159,12 @@ class Carousel {
         this.cards.forEach(c => c.classList.remove('active'));
         if (!wasActive) {
           card.classList.add('active');
+          const content = card.querySelector(`.${this.prefix}__card-content`);
+          if (content) {
+            content.style.transform = 'translateY(0)';
+          }
+        } else {
+          this.updateCardTransform(card);
         }
       });
     });
@@ -168,6 +185,7 @@ class Carousel {
     this.setupCardEvents();
     this.setupNavigationEvents();
     this.updateArrowsVisibility();
+    this.cards.forEach(card => this.updateCardTransform(card));
   }
 }
 
