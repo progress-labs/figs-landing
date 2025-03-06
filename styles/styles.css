@@ -138,6 +138,8 @@ html {
 @media (min-width: 768px) {
   .content__text-title {
     font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 16px;
     padding: 0;
   }
   .content__text-description {
