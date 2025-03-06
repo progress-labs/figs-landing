@@ -96,6 +96,7 @@ html {
 
   .content__image-item {
     height: auto;
+    border-radius: 8px;
   }
 }
 
@@ -331,6 +332,10 @@ html {
     margin-bottom: 0;
     margin-right: 0;
     margin-left: auto;
+  }
+
+  .values-intro__image img {
+    border-radius: 8px;
   }
 
   .values-intro__title {
@@ -1300,6 +1305,7 @@ html {
   width: 100%;
   height: auto;
   object-fit: cover;
+  border-radius: 8px;
 }
 
 .people__numbers-title {
