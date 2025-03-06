@@ -225,6 +225,10 @@ class NumberSpinner {
     this.setupObserver();
   }
 
+  formatNumber(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
   setupObserver() {
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -251,9 +255,9 @@ class NumberSpinner {
       current += this.increment;
       
       if (current <= this.endValue) {
-        this.numberElement.textContent = current.toString();
+        this.numberElement.textContent = this.formatNumber(current);
       } else {
-        this.numberElement.textContent = this.endValue.toString();
+        this.numberElement.textContent = this.formatNumber(this.endValue);
         clearInterval(counter);
       }
     }, stepDuration);

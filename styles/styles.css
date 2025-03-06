@@ -892,6 +892,10 @@ html {
   color: #707070;
 }
 
+.purpose__numbers-stat:last-child{
+  color: #46444C;
+}
+
 .purpose__numbers-value {
   font-size: 36px;
   font-weight: 700;
