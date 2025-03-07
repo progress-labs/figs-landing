@@ -37,19 +37,7 @@ class PurposeTabs {
     this.tabButtons = [...container.querySelectorAll('.purpose__tab-button')];
     this.tabContents = [...container.querySelectorAll('.purpose__tab-content')];
     this.currentTab = 0;
-    this.carousels = new Map();
-    this.setupCarousels();
-  }
-
-  setupCarousels() {
-    this.tabContents.forEach(content => {
-      const carouselContainer = content.querySelector('[data-js="PurposeCarousel"]');
-      if (carouselContainer) {
-        const carousel = new Carousel(carouselContainer);
-        carousel.init();
-        this.carousels.set(content, carousel);
-      }
-    });
+    this.carousels = [...container.querySelectorAll('[data-js="Carousel"]')];
   }
 
   showTab(index) {
@@ -62,11 +50,17 @@ class PurposeTabs {
 
     this.tabButtons[index].classList.add('purpose__tab-button--active');
     this.tabContents[index].classList.add('purpose__tab-content--active');
-    
-    const activeCarousel = this.carousels.get(this.tabContents[index]);
-    if (activeCarousel) {
-      activeCarousel.resetCarousel();
-    }
+
+    // Resetear y recalcular todas las cards
+    this.carousels.forEach(carouselContainer => {
+      const carousel = carouselContainer.__carousel;
+      if (carousel) {
+        carousel.cards.forEach(card => {
+          card.classList.remove('active');
+        });
+        carousel.calculateHeaderHeights();
+      }
+    });
   }
 
   setupTabEvents() {
@@ -79,6 +73,12 @@ class PurposeTabs {
   }
 
   init() {
+    this.carousels.forEach(container => {
+      const carousel = new Carousel(container);
+      container.__carousel = carousel;
+      carousel.init();
+    });
+
     this.showTab(this.currentTab);
     this.setupTabEvents();
   }
@@ -100,8 +100,22 @@ class Carousel {
     this.rightArrow = container.querySelector(`.${prefix}__nav-arrow--right`);
     this.cardWidth = 290 + 16;
     this.prefix = prefix;
-    
-    this.cards.forEach(card => this.updateCardTransform(card));
+  }
+
+  calculateHeaderHeights() {
+    return new Promise(resolve => {
+      requestAnimationFrame(() => {
+        this.cards.forEach(card => {
+          const header = card.querySelector(`.${this.prefix}__card-header`);
+          if (header) {
+            const headerHeight = header.offsetHeight;
+            card.dataset.headerHeight = headerHeight;
+            this.updateCardTransform(card);
+          }
+        });
+        resolve();
+      });
+    });
   }
 
   updateArrowsVisibility() {
@@ -149,14 +163,16 @@ class Carousel {
     const content = card.querySelector(`.${this.prefix}__card-content`);
     if (header && content) {
       const headerHeight = header.offsetHeight;
+      card.dataset.headerHeight = headerHeight;
       let translateY = 56;
-      if (headerHeight > 50) {
+      if (headerHeight > 70) {
+        translateY = 118;
+      } else if (headerHeight > 50) {
         translateY = 94;
       } else if (headerHeight > 45) {
         translateY = 70;
       }
       content.style.transform = `translateY(calc(100% - ${translateY}px))`;
-      console.log(`Card header height: ${headerHeight}, translateY: ${translateY}`);
     }
   }
 
@@ -164,15 +180,19 @@ class Carousel {
     this.cards.forEach(card => {
       card.addEventListener('click', () => {
         const wasActive = card.classList.contains('active');
-        this.cards.forEach(c => c.classList.remove('active'));
+        
+        // Primero actualizamos todas las cards a su estado inicial
+        this.cards.forEach(c => {
+          c.classList.remove('active');
+          this.updateCardTransform(c);
+        });
+        
         if (!wasActive) {
           card.classList.add('active');
           const content = card.querySelector(`.${this.prefix}__card-content`);
           if (content) {
             content.style.transform = 'translateY(0)';
           }
-        } else {
-          this.updateCardTransform(card);
         }
       });
     });
@@ -193,6 +213,12 @@ class Carousel {
     this.setupCardEvents();
     this.setupNavigationEvents();
     this.updateArrowsVisibility();
+    
+    this.calculateHeaderHeights();
+
+    window.addEventListener('resize', () => {
+      this.calculateHeaderHeights();
+    });
   }
 }
 
@@ -338,13 +364,16 @@ class PeopleTabs {
     this.tabButtons[index].classList.add('people__tab-button--active');
     this.tabContents[index].classList.add('people__tab-content--active');
 
-    const activeCarousel = this.carousels[index];
-    if (activeCarousel) {
-      const carousel = activeCarousel.__carousel;
+    // Resetear todas las cards en todos los carruseles
+    this.carousels.forEach(carouselContainer => {
+      const carousel = carouselContainer.__carousel;
       if (carousel) {
-        carousel.cards.forEach(card => carousel.updateCardTransform(card));
+        carousel.cards.forEach(card => {
+          card.classList.remove('active');
+        });
+        carousel.calculateHeaderHeights();
       }
-    }
+    });
   }
 
   setupTabEvents() {
@@ -403,7 +432,7 @@ document.addEventListener('DOMContentLoaded', () => {
     carousel.init();
   });
 
-  const purposeTabs = [...document.querySelectorAll('.purpose__tabs')];
+  const purposeTabs = [...document.querySelectorAll('[data-js="PurposeTabs"]')];
   purposeTabs.forEach(container => {
     const tabs = new PurposeTabs(container);
     tabs.init();
@@ -421,7 +450,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   new ParallaxEffect();
 
-  const standaloneCarousels = [...document.querySelectorAll('[data-js="Carousel"]:not(.people__tab-content [data-js="Carousel"])')];
+  const standaloneCarousels = [...document.querySelectorAll('[data-js="Carousel"]:not(.people__tab-content [data-js="Carousel"], .purpose__tab-content [data-js="Carousel"])')];
   standaloneCarousels.forEach(container => {
     const carousel = new Carousel(container);
     carousel.init();
