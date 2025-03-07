@@ -147,7 +147,12 @@ class Carousel {
     const content = card.querySelector(`.${this.prefix}__card-content`);
     if (header && content) {
       const headerHeight = header.offsetHeight;
-      const translateY = headerHeight > 35 ? 70 : 56;
+      let translateY = 56;
+      if (headerHeight > 50) {
+        translateY = 94;
+      } else if (headerHeight > 45) {
+        translateY = 70;
+      }
       content.style.transform = `translateY(calc(100% - ${translateY}px))`;
     }
   }
