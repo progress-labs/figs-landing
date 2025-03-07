@@ -138,6 +138,8 @@ html {
 @media (min-width: 768px) {
   .content__text-title {
     font-size: 32px;
+    margin-top: 0;
+    margin-bottom: 16px;
     padding: 0;
   }
   .content__text-description {
@@ -267,11 +269,51 @@ html {
   }
 }
 
+.values-intro-wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.values-intro-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 350px;
+  left: 0;
+  width: 370px;
+  height: 370px;
+  background-image: url('../images/parallax\ icons/vector-hands.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  pointer-events: none;
+  transform: translateY(calc(0px + var(--parallax-offset, 0px)));
+  transition: transform 0.1s linear;
+}
+
+.values-intro-wrapper::before {
+  content: '';
+  position: absolute;
+  bottom: 350px;
+  right: 0;
+  width: 400px;
+  height: 700px;
+  background-image: url('../images/parallax\ icons/vector-heart.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  pointer-events: none;
+  transform: translateY(calc(0px + var(--parallax-offset, 0px)));
+  transition: transform 0.1s linear;
+}
+
 .values-intro {
   max-width: 580px;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .values-intro__image {
@@ -668,6 +710,24 @@ html {
 .purpose-wrapper {
   background-color: #FFFFFF;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.purpose-wrapper::after {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: 0;
+  width: 820px;
+  height: 820px;
+  background-image: url('../images/parallax\ icons/vector-world.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  pointer-events: none;
+  transform: translateY(calc(0px + var(--parallax-offset, 0px)));
+  transition: transform 0.1s linear;
 }
 
 .purpose {
@@ -675,6 +735,8 @@ html {
   padding: 48px 16px;
   max-width: 580px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .purpose__header {
@@ -696,10 +758,10 @@ html {
 .purpose__title {
   font-weight: 900;
   font-size: 32px;
-  line-height: 55px;
-  letter-spacing: 6.6px;
+    line-height: 55px;
+    letter-spacing: 6.6px;
   text-transform: uppercase;
-  margin: 0;
+    margin: 0;
   color: #486F7A;
 }
 
@@ -828,6 +890,10 @@ html {
 
 .purpose__numbers-stat:first-child{
   color: #707070;
+}
+
+.purpose__numbers-stat:last-child{
+  color: #46444C;
 }
 
 .purpose__numbers-value {
@@ -1300,6 +1366,25 @@ html {
 .people-wrapper {
   background-color: #F5F5F5;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.people-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 450px;
+  height: 450px;
+  background-image: url('../images/parallax\ icons/vector-arm.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  transform: translateY(calc(-50% + var(--parallax-offset, 0px)));
+  transition: transform 0.1s linear;
 }
 
 .people {
@@ -1307,6 +1392,8 @@ html {
   padding: 48px 16px;
   max-width: 580px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .people__header {
@@ -1907,12 +1994,32 @@ html {
 .product-wrapper {
   background-color: white;
   width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-wrapper::after {
+  content: '';
+  position: absolute;
+  bottom: 1200px;
+  right: 0;
+  width: 600px;
+  height: 600px;
+  background-image: url('../images/parallax\ icons/vector-cross.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+  pointer-events: none;
+  transform: translateY(calc(0px + var(--parallax-offset, 0px)));
+  transition: transform 0.1s linear;
 }
 
 .product {
   padding: 48px 16px;
-    max-width: 580px;
+  max-width: 580px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .product__header {
@@ -2213,7 +2320,7 @@ html {
   flex-direction: row-reverse;
   justify-content: flex-end;
   align-items: center;
-  margin-bottom: 24px;
+    margin-bottom: 24px;
   gap: 16px;
 }
 
@@ -2487,6 +2594,7 @@ html {
   position: relative;
   display: block;
 }
+
 .nav-bar {
   width: 100%;
   background-color: white;

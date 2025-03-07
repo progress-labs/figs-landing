@@ -225,6 +225,10 @@ class NumberSpinner {
     this.setupObserver();
   }
 
+  formatNumber(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
   setupObserver() {
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -251,9 +255,9 @@ class NumberSpinner {
       current += this.increment;
       
       if (current <= this.endValue) {
-        this.numberElement.textContent = current.toString();
+        this.numberElement.textContent = this.formatNumber(current);
       } else {
-        this.numberElement.textContent = this.endValue.toString();
+        this.numberElement.textContent = this.formatNumber(this.endValue);
         clearInterval(counter);
       }
     }, stepDuration);
@@ -342,6 +346,34 @@ class PeopleTabs {
   }
 }
 
+class ParallaxEffect {
+  constructor() {
+    this.peopleWrapper = document.querySelector('.people-wrapper');
+    this.purposeWrapper = document.querySelector('.purpose-wrapper');
+    this.productWrapper = document.querySelector('.product-wrapper');
+    this.valuesIntroWrapper = document.querySelector('.values-intro-wrapper');
+    this.setupParallax();
+  }
+
+  setupParallax() {
+    window.addEventListener('scroll', () => {
+      requestAnimationFrame(() => this.updateParallax());
+    });
+  }
+
+  updateParallax() {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * 0.15;
+    
+    if (this.peopleWrapper && this.purposeWrapper && this.productWrapper && this.valuesIntroWrapper) {
+      this.peopleWrapper.style.setProperty('--parallax-offset', `${rate}px`);
+      this.purposeWrapper.style.setProperty('--parallax-offset', `${rate}px`);
+      this.productWrapper.style.setProperty('--parallax-offset', `${rate}px`);
+      this.valuesIntroWrapper.style.setProperty('--parallax-offset', `${rate}px`);
+    }
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const carousels = [...document.querySelectorAll('[data-js="PillarsCarousel"]')];
   carousels.forEach(container => {
@@ -372,4 +404,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabs = new PeopleTabs(container);
     tabs.init();
   });
+
+  new ParallaxEffect();
 });
