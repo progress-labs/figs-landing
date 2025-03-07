@@ -1104,7 +1104,6 @@ html {
 }
 
 .purpose__card-description {
-  visibility: hidden;
   font-size: 13px;
   line-height: 22px;
   letter-spacing: 0.65px;
@@ -1294,7 +1293,7 @@ html {
 }
 
 .purpose__card.active .purpose__card-content {
-  transform: translateY(0);
+  transition: transform 0.3s ease;
 }
 
 .purpose__card.active .purpose__card-description {
@@ -1809,7 +1808,7 @@ html {
   }
 
   .people {
-  padding: 0 16px;
+    padding: 0 16px;
     max-width: 1232px;
     margin: 0 auto;
   }
@@ -1922,7 +1921,7 @@ html {
 }
 
 .people__card.active .people__card-content {
-  transform: translateY(0);
+  transition: transform 0.3s ease;
 }
 
 .people__card.active .people__card-description {
@@ -2526,7 +2525,7 @@ html {
 }
 
 .product__card.active .product__card-content {
-  transform: translateY(0);
+  transition: transform 0.3s ease;
 }
 
 .product__card.active .product__card-description {
