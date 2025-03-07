@@ -100,6 +100,8 @@ class Carousel {
     this.rightArrow = container.querySelector(`.${prefix}__nav-arrow--right`);
     this.cardWidth = 290 + 16;
     this.prefix = prefix;
+    
+    this.cards.forEach(card => this.updateCardTransform(card));
   }
 
   updateArrowsVisibility() {
@@ -147,8 +149,14 @@ class Carousel {
     const content = card.querySelector(`.${this.prefix}__card-content`);
     if (header && content) {
       const headerHeight = header.offsetHeight;
-      const translateY = headerHeight > 35 ? 70 : 56;
+      let translateY = 56;
+      if (headerHeight > 50) {
+        translateY = 94;
+      } else if (headerHeight > 45) {
+        translateY = 70;
+      }
       content.style.transform = `translateY(calc(100% - ${translateY}px))`;
+      console.log(`Card header height: ${headerHeight}, translateY: ${translateY}`);
     }
   }
 
@@ -185,7 +193,6 @@ class Carousel {
     this.setupCardEvents();
     this.setupNavigationEvents();
     this.updateArrowsVisibility();
-    this.cards.forEach(card => this.updateCardTransform(card));
   }
 }
 
@@ -317,6 +324,7 @@ class PeopleTabs {
     this.tabButtons = [...container.querySelectorAll('.people__tab-button')];
     this.tabContents = [...container.querySelectorAll('.people__tab-content')];
     this.currentTab = 0;
+    this.carousels = [...container.querySelectorAll('[data-js="Carousel"]')];
   }
 
   showTab(index) {
@@ -329,6 +337,14 @@ class PeopleTabs {
 
     this.tabButtons[index].classList.add('people__tab-button--active');
     this.tabContents[index].classList.add('people__tab-content--active');
+
+    const activeCarousel = this.carousels[index];
+    if (activeCarousel) {
+      const carousel = activeCarousel.__carousel;
+      if (carousel) {
+        carousel.cards.forEach(card => carousel.updateCardTransform(card));
+      }
+    }
   }
 
   setupTabEvents() {
@@ -341,6 +357,12 @@ class PeopleTabs {
   }
 
   init() {
+    this.carousels.forEach(container => {
+      const carousel = new Carousel(container);
+      container.__carousel = carousel;
+      carousel.init();
+    });
+
     this.showTab(this.currentTab);
     this.setupTabEvents();
   }
@@ -391,14 +413,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
   new NumberSpinner();
   
-  const allCarousels = [...document.querySelectorAll('[data-js="Carousel"]')];
-  allCarousels.forEach(container => {
-    const carousel = new Carousel(container);
-    carousel.init();
-  });
-
-  new StickyNav();
-
   const peopleTabs = [...document.querySelectorAll('[data-js="PeopleTabs"]')];
   peopleTabs.forEach(container => {
     const tabs = new PeopleTabs(container);
@@ -406,4 +420,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   new ParallaxEffect();
+
+  const standaloneCarousels = [...document.querySelectorAll('[data-js="Carousel"]:not(.people__tab-content [data-js="Carousel"])')];
+  standaloneCarousels.forEach(container => {
+    const carousel = new Carousel(container);
+    carousel.init();
+  });
+
+  new StickyNav();
 });
