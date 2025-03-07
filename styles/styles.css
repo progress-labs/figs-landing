@@ -956,6 +956,8 @@ html {
 .purpose__tab-button {
   background: none;
   border: none;
+  -webkit-tap-highlight-color: transparent;
+  color: #000000;
   font-family: "FIGSv2", sans-serif;
   font-weight: 700;
   font-size: 13px;
@@ -1568,6 +1570,8 @@ html {
 .people__tab-button {
   background: none;
   border: none;
+  -webkit-tap-highlight-color: transparent;
+  color: #282828;
   font-family: "FIGSv2", sans-serif;
   font-weight: 700;
   font-size: 13px;
@@ -2187,7 +2191,8 @@ html {
 .product__tab-button {
   background: none;
   border: none;
-  color: white;
+  -webkit-tap-highlight-color: transparent;
+  color: #000000;
   font-family: "FIGSv2", sans-serif;
   font-weight: 700;
   font-size: 13px;
@@ -2210,7 +2215,7 @@ html {
   bottom: -2px;
   width: 100%;
   height: 2px;
-  background-color: white;
+  background-color: #000000;
 }
 
 .product__tab-title {
