@@ -2002,7 +2002,7 @@ html {
   content: '';
   position: absolute;
   bottom: 1200px;
-  right: -200px;
+  right: 0;
   width: 600px;
   height: 600px;
   background-image: url('../images/parallax\ icons/vector-cross.svg');
