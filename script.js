@@ -183,7 +183,7 @@ class Carousel {
       const headerHeight = header.offsetHeight;
       card.dataset.headerHeight = headerHeight;
       let translateY = 56;
-      if (headerHeight > 70) {
+      if (headerHeight > 75) {
         translateY = 118;
       } else if (headerHeight > 50) {
         translateY = 94;
