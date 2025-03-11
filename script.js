@@ -51,7 +51,6 @@ class PurposeTabs {
     this.tabButtons[index].classList.add('purpose__tab-button--active');
     this.tabContents[index].classList.add('purpose__tab-content--active');
 
-    // Resetear y recalcular todas las cards
     this.carousels.forEach(carouselContainer => {
       const carousel = carouselContainer.__carousel;
       if (carousel) {
@@ -181,7 +180,6 @@ class Carousel {
       card.addEventListener('click', () => {
         const wasActive = card.classList.contains('active');
         
-        // Primero actualizamos todas las cards a su estado inicial
         this.cards.forEach(c => {
           c.classList.remove('active');
           this.updateCardTransform(c);
@@ -364,7 +362,6 @@ class PeopleTabs {
     this.tabButtons[index].classList.add('people__tab-button--active');
     this.tabContents[index].classList.add('people__tab-content--active');
 
-    // Resetear todas las cards en todos los carruseles
     this.carousels.forEach(carouselContainer => {
       const carousel = carouselContainer.__carousel;
       if (carousel) {
