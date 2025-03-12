@@ -654,6 +654,8 @@ html {
   .pillars-container {
     flex: 1;
     max-width: 580px;
+    padding-top: 0;
+    padding-bottom: 40px;
   }
 
   .impact-content h2,
@@ -672,7 +674,6 @@ html {
   }
 
   .pillar-card {
-    padding-top: 42px;
     max-width: 120px;
   }
 
