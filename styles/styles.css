@@ -18,6 +18,15 @@
 
 @font-face {
   font-family: 'FIGSv2';
+  src: url('../fonts/FIGSv2-sans-serif-SemiBold.woff2') format('woff2'),
+       url('../fonts/FIGSv2-sans-serif-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'FIGSv2';
   src: url('../fonts/FIGSv2-sans-serif-Bold.woff2') format('woff2'),
        url('../fonts/FIGSv2-sans-serif-Bold.woff') format('woff');
   font-weight: 700;
@@ -745,8 +754,8 @@ html {
 }
 
 .purpose__icon {
-  width: 24px;
-  height: 24px;
+  width: 29px;
+  height: 29px;
 }
 
 .purpose__icon-image {
@@ -1403,8 +1412,8 @@ html {
 }
 
 .people__icon {
-  width: 24px;
-  height: 24px;
+  width: 29px;
+  height: 29px;
 }
 
 .people__icon-image {
@@ -2015,8 +2024,8 @@ html {
 }
 
 .product__icon {
-  width: 24px;
-  height: 24px;
+  width: 29px;
+  height: 29px;
 }
 
 .product__icon-image {
