@@ -525,6 +525,8 @@ html {
   letter-spacing: 1.8px;
   text-align: center;
   text-transform: uppercase;
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
 
 .pillar-link {
@@ -575,7 +577,7 @@ html {
   }
 
   .pillars-wrapper {
-    height: 350px;
+    height: 358px;
     align-items: flex-end;
     gap: 16px;
   }
@@ -583,7 +585,9 @@ html {
   .pillar-card {
     min-width: 80px;
     height: 292px;
-  transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    margin-top: 18px;
+    margin-bottom: 18px;
   }
 
   .pillar-card:not(.active) {
